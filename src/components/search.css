@@ -1,0 +1,26 @@
+.containerSearch{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    background-color: white;
+    width: 600px;
+    height: 55px;
+    display:flex;
+}
+form input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+form button {
+    background: yellow;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: black;
+    letter-spacing: 1px;
+    cursor: pointer;
+}

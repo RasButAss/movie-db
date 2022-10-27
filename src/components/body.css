@@ -1,0 +1,12 @@
+.containerBody {
+    margin-top: 25vh;
+    margin-bottom: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBody h1 {
+    font-size: 70px;
+}
