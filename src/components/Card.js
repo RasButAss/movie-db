@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const Card = ({ name, image, gender, movie_name, rating }) => {
+const Card = ({ name, image, gender, movie_name, rating, tv_name }) => {
     const [isHovering, setIsHovering] = useState(false)
     const handleMouseEnter = () => {
         setIsHovering(true)
@@ -23,7 +23,7 @@ const Card = ({ name, image, gender, movie_name, rating }) => {
         <div className="card bg-dark text-light" style={{width: "18rem", border: "solid yellow"}}>
                 <img src={image} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{name}{movie_name}</h5>
+                    <h5 className="card-title">{name}{movie_name}{tv_name}</h5>
                     <h6 className="card-text">{sex(gender)}</h6>
                     <a href="#" className="btn btn-warning" style={{backgroundColor: isHovering ? '#FDDA0D' : 'yellow'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Read More</a>
                 </div>
