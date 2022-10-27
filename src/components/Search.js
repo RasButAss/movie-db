@@ -3,6 +3,15 @@ import '../components/search.css'
 import Movies from './Movies';
 import Card from './Card';
 
+const formStyles = {
+    width: "400px",
+    height: "40px" 
+}
+
+const buttonStyles = {
+    padding: "10px 30px"
+}
+
 const Search = () => {
     const [isHovering, setIsHovering] = useState(false)
     const handleMouseEnter = () => {
@@ -16,13 +25,6 @@ const Search = () => {
     }
     const searchOnClick = (event) => {
         event.preventDefault();
-        // console.log("Button was clicked");
-        // let url = "https://api.themoviedb.org/3/search/multi?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&query=" + search + "&page=1&include_adult=false"
-        // fetch(url)
-        // .then((res) => {return res.json();})
-        // .then((data) => {
-        //     setResults(data);
-        // });
     }
     const [inital,setInitial] = useState("A")
     const [search,setSearch] = useState("");
