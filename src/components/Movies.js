@@ -1,24 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import Card from './Card'
 
-const Movies = ({page, type, heading, query, isquery }) => {
+const Movies = ({page, type, heading, query }) => {
     let movies = [];
+    // fetch("https://api.themoviedb.org/3/movie/popular?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&page=1").then((res) => {return res.json()}).then((data) => {return data.results})
     const [movie, setMovies] = useState(movies)
-    useEffect(() => {   
-        const pro = async () => {
-            let url = "";
-            if(isquery) {
-                url = "https://api.themoviedb.org/3/"+type+"/"+page+"?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&query=" + query + "&page=1"
-            } else {
-                url = "https://api.themoviedb.org/3/"+type+"/"+page+"?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&page=1"
-            }
-            let data = await fetch(url);
-            let parsedData = await data.json();
-            setMovies(parsedData.results)
+    useEffect(() => {
+        let url = "";
+        if(query !== "") {
+            url = "https://api.themoviedb.org/3/"+type+"/"+page+"?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&query=" + query + "&page=1"
+        } else {
+            url = "https://api.themoviedb.org/3/"+type+"/"+page+"?api_key=f98c40b419ba707e7754ca68fb9f6498&language=en-US&page=1"
         }
-        pro();
-        
-    },[movies])
+        fetch(url).then((respose) => {return respose.json()}).then((data) => {
+            // console.log(data);
+            setMovies(data.results)
+        });
+        // let parsedData = await data.json();
+        // setMovies(parsedData.results)
+    })
   return (
     <div className='container'>
     <h1 style={{ color: "yellow" }}><strong>{heading}</strong></h1>
